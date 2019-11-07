@@ -26,9 +26,9 @@ function printHello(done) {
 }
 
 function copy() {
-    return gulp.src('./src/scss/styles.scss')
-        .pipe(rename('main.scss'))
-        .pipe(gulp.dest('./src/css'));
+    return gulp.src('./src/img/1.jpg')
+        .pipe(rename('2.jpg'))
+        .pipe(gulp.dest('./src/img'));
 }
 
 // styles
@@ -36,9 +36,9 @@ function copy() {
 function cssTask() {
     return gulp.src(files.cssPath)
         // .pipe(sourcemaps.init())
-        // .pipe(sass())
-        .pipe(sass({outputStyle: 'compressed'})
-        .on('error', sass.logError))
+        .pipe(sass())
+        // .pipe(sass({outputStyle: 'compressed'})
+        // .on('error', sass.logError))
         // .pipe(autoprefixer({cascade: false}))
         .pipe(rename({suffix: '.min'}))
         // .pipe(sourcemaps.write())
